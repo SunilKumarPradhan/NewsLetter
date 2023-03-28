@@ -1,3 +1,4 @@
+require ("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
@@ -36,13 +37,13 @@ app.post("/", (req, res) => {
   
     const options = {
       method: "POST",
-      auth: "Sunil_47:05b046d694f7b9330d3aa728e4223cd7-us13",
+      auth: "Sunil_47:0e69fb15923603bac8b0eb2ef00e97f7-us13",
     };
   
 
 
     // URL for the endpoint
-    const url = "https://us13.api.mailchimp.com/3.0/lists/83d7f37498";
+    const url = (process.env.API_KEY);
     // create a request object and send the data
     const request = https.request(url,options,(response)=>{
 
